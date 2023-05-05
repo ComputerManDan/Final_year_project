@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+    minimum-scale=1.0">
+		<title>Profile</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/profile.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	        <img src="https://di68.brighton.domains/oas2/images/logo.png" alt="logo" id="logo">
+        	    <nav id="nav">
+        	    </nav>
+    	    </header>
+    	    <main id="main">
+    	        <button onclick=logout() id="logout">logout</button>
+    	        <img id="pp" src="https://www.lmalloyds.com/images/LMA/staff/No%20profile%20-%20mini%20200x220.jpg" >
+                <form ref="uploadForm" id="uploadForm" enctype="multipart/form-data">
+                    <label style="
+    padding-left: 1em;
+">Change profile picture:</label>
+                    <input type="file" name="sampleFile" id="file">
+                    <input type="submit" value="Upload!" id="upload">
+                </form>
+    	        <h3 id="name">Name: </h3>
+    	        <h3 id="UserTeam">Team: </h3>
+    	        <h3 id="message">Current bias analysis: </h3>
+    	        <button onclick="getBias()">get bias</button>
+        		<form id="queryForm">
+        		    <label for="team">Team: </label>
+                    <select id="team" name="team">
+                      <option value="arsenal">Arsenal</option>
+                      <option value="villa">Aston Villa FC</option>
+                      <option value="bournemouth">Bournemouth AFC</option>
+                      <option value="brentford">Brentford</option>
+                      <option value="brighton">Brighton & Hove Albion</option>
+                      <option value="chelsea">Chelsea</option>
+                      <option value="crystal palace">Crystal Palace</option>
+                      <option value="everton">Everton FC</option>
+                      <option value="forest">Forest</option>
+                      <option value="fulham">Fulham</option>
+                      <option value="leicester">Leicester City FC</option>
+                      <option value="leeds">Leeds United</option>
+                      <option value="liverpool">Liverpool FC</option>
+                      <option value="city">Manchester City FC</option>
+                      <option value="united">Manchester United FC</option>
+                      <option value="newcastle">Newcastle United</option>
+                      <option value="southampton">Southampton FC</option>
+                      <option value="spurs">Tottenham Hotspur FC</option>
+                      <option value="ham">West Ham United</option>
+                      <option value="wolves">Wolverhampton Wanderers</option>
+                    </select>      
+                    <label for="cata">cata: </label>
+                    <select id="cata" name="cata">
+                        <option value="any">any</option>
+                      <option value="team">team</option>
+                      <option value="transfers">transfers</option>
+                    </select>
+                    <label for="sort">sort: </label>
+                    <select id="sort" name="sort">
+                      <option value="datesdec">date up</option>
+                      <option value="dateas">date down</option>
+                    </select>
+                    <label for="time">time: </label>
+                    <select id="time" name="time">
+                        <option value="any">any</option>
+                      <option value="week">week</option>
+                      <option value="month">month</option>
+                      <option value="year">year</option>
+                    </select>
+        		</form>
+                <button id="submitButton" onclick="getQuery()">submit</button>
+                <h3 id="posts">Posts: </h3>
+                <div id="Userposts"></div>
+                <p id="value"></p>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+	    </div>
+    <script>
+        function deleteposts(clicked_id){
+            let myArray = clicked_id.split("_");
+
+            confirm("Are you sure you want to delete");
+            
+            fetch('https://di68.brighton.domains/oas2/deletePost?id='+myArray[0]+"&team="+myArray[1])
+            .then((response) => response.json())
+            .then((data) => {console.log(data["message"])})
+            window.location.replace("https://di68.brighton.domains/oas2/index.html");
+        }
+        function logout(){
+            confirm("Are you sure you want to Logout");
+            window.location.replace("https://di68.brighton.domains/oas2/login.html");
+            fetch("https://di68.brighton.domains/oas2/logout")
+            .then((response) => response.json())
+            .then((data) => {console.log(data["message"])})
+
+        }
+
+	   function getQuery(){
+            const form = document.getElementById('queryForm');
+            const formData = new FormData(form);
+            let formDataArr=[]
+            for (const [key, value] of formData) {
+              (formDataArr.push(value))
+            }
+            console.log(formDataArr);
+            fetch('https://di68.brighton.domains/oas2/getUserPosts?team='+
+            formDataArr[0]+'&cata='+formDataArr[1]+'&sort='+formDataArr[2]+'&time='+formDataArr[3])
+            .then((response) => response.json())
+            .then((data) => {
+                let Fteam = document.getElementById("team").value;
+                document.getElementById("Userposts").innerHTML=""
+                for (let i = 0; i < 10; i++) {
+                    const postinfo = data["message"][i];
+                    
+                    console.log(data["message"][i]);
+                    
+                    const div = document.createElement("div");
+                    div.innerHTML += "<img id='profilePic' src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["pp"]}`+".png"+" />";
+                    div.innerHTML += "<h3>"+postinfo["username"]+", "+postinfo["bias"]+", "+postinfo["date"]+"</h3>"
+                    div.innerHTML += "<h4>"+postinfo["title"]+"</h4>"
+                    div.innerHTML += "<p>"+postinfo["post"]+"</p>"
+                    if (postinfo["imageref"] == 0){ console.log("emtpy")}
+                    else {                    div.innerHTML += "<img src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["imageref"]}`+".png"+" style='max-width: 50%; display: block; margin-left: auto; margin-right: auto; max-height: 50%;' />";}
+                    div.innerHTML += "<p>Likes: "+postinfo["likes"]+"</p>"
+                    // div.innerHTML += "<form action='deleteUserPost' method='POST'><select id='postid' name='postid'><option value="+"'"+postinfo["id"]+"'"+">1</option></select><button type='submit' onclick='deleteposts(this.id)'>Delete</button></form>"
+                    div.innerHTML += "<button id="+postinfo['id']+"_"+Fteam+" onclick=deleteposts(this.id) >Delete</button>"
+
+                    
+                    if (postinfo["cata"]=="Transfer"){
+                        div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; background-color:yellow; margin:0.1em;");
+                    }
+                    else {div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; margin:0.1em; background-color:#f3f3f3;");}
+                    div.setAttribute("id", "div"+String(i));
+
+
+                    document.getElementById("Userposts").appendChild(div);
+                    
+                }
+            })
+	   }
+
+	   function getBias(){
+	       let amount=[];
+       let startOfJson = '{  "@context": {    "xsd": "http://www.w3.org/2001/XMLSchema#"},  "@id": "http://oas.co.uk/uid/index/",  "@teams": ['
+       let endOfJson = ']}'
+       let teamArray =["arsenal" ,"villa" ,"bournemouth" ,"brentford" ,"brighton" ,"chelsea" ,"palace" ,"everton" ,"forest" ,"fulham" ,"leicester" ,"leeds" ,"liverpool" ,"city" ,"united" ,"newcastle" ,"southampton" ,"spurs" ,"ham" ,"wolves"];
+        
+        fetch('https://di68.brighton.domains/oas2/info')
+        .then((response) => response.json())
+        .then((data) => {
+            if (data["message"]!="login"){
+                for (let i = 0; i < teamArray.length; i++) {
+                fetch('https://di68.brighton.domains/oas2/amount?team='+teamArray[i])
+                .then((response) => response.json())
+                .then((data) => {
+                    amount.push(data["message"].length)
+                    // console.log(amount)
+                    if (i == 19){
+                        document.getElementById("value").innerHTML=amount
+                        let answers = [{"arsenal": amount[0]} ,{"villa": amount[1]} ,{"bournemouth": amount[2]} ,{"brentford": amount[3]} ,{"brighton": amount[4]} ,{"chelsea": amount[5]} ,{"palace": amount[6]} ,{"everton": amount[7]} ,{"forest": amount[8]} ,{"fulham": amount[9]} ,{"leicester": amount[10]} ,{"leeds": amount[11]} ,{"liverpool": amount[12]} ,{"city": amount[13]} ,{"united": amount[14]} ,{"newcastle": amount[15]} ,{"southampton": amount[16]} ,{"spurs": amount[17]} ,{"ham": amount[18]} ,{"wolves": amount[19]}];
+                        let answers2 = JSON.stringify(answers);
+                        let graph = startOfJson+answers2+endOfJson
+                        let linked_data = JSON.parse(graph);
+                        let level_1 = linked_data["@teams"]
+                        let level_2 = level_1[0]
+                        let keys = Object.keys(level_2);
+                        let top =level_2[keys[0]]
+                        let bottom = level_2[keys[0]]
+                        for (let i = 0; i < keys.length; i++) {
+                            if (level_2[keys[i]]<level_2[keys[i+1]]){
+                                top = level_2[keys[i+1]]
+                            }
+                        }
+                        for (let i = 0; i < keys.length; i++) {
+                            if (level_2[keys[i+1]]<level_2[keys[i]]){
+                                bottom = level_2[keys[i+1]]
+                            }
+                            else {bottom = level_2[keys[i]]}
+                        }
+                        console.log(Object.keys(top)[0]+Object.keys(bottom)[0])
+                        document.getElementById("message").innerHTML +=("<div id='accMes'>"+"you have a current bias towards " + Object.keys(top)[0] + " we think you should look in at " + Object.keys(bottom)[0] +"</div>");
+
+                    }
+                })
+                }
+            }
+        })
+
+	   }
+	   
+        fetch('https://di68.brighton.domains/oas2/info')
+        .then((response) => response.json())
+        .then((data) => {
+            if (data["message"]!="login"){
+                document.getElementById("nav").innerHTML = "<a href='index.html'>&#127968; Index</a> <a href='forum.html'>&#128214; Forum</a> <a href='postmaker.html'>&#128396; Postmaker</a> <a href='profile.html'>&#128100; Profile</a>";
+            console.log(data["message"]);
+            document.getElementById("uploadForm").setAttribute("action", "https://di68.brighton.domains/oas2/upload?id="+`${data["message"][0]["id"]}`);
+            document.getElementById("uploadForm").setAttribute("method", "post");
+            document.getElementById("name").innerHTML +=(data["message"][0]["username"]);
+            document.getElementById("UserTeam").innerHTML +=(data["message"][0]["team"]);
+            document.getElementById("pp").src = `https://di68.brighton.domains/oas2/images/${data["message"][0]["pp"]}.png`;
+            }
+            else{                document.getElementById("nav").innerHTML = "<a href='login.html'>&#128275; Login</a> <a href='signup.html'>&#10133; Sign up</a>";
+
+                const div = document.createElement("div");
+                div.innerHTML += "<div id='login'> Login to view page</div>";
+                document.getElementById("uploadForm").appendChild(div);
+            }
+        })
+
+    </script>
+	</body>
+</html>

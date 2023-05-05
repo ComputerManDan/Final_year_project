@@ -1,0 +1,207 @@
+App 7004 output: ReferenceError: sql is not defined
+App 7004 output:     at /home/di68/nodeapps/oas2/app.js:283:23
+App 7004 output:     at Layer.handle [as handle_request] (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/layer.js:95:5)
+App 7004 output:     at next (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/route.js:144:13)
+App 7004 output:     at Route.dispatch (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/route.js:114:3)
+App 7004 output:     at Layer.handle [as handle_request] (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/layer.js:95:5)
+App 7004 output:     at /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/index.js:284:15
+App 7004 output:     at Function.process_params (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/index.js:346:12)
+App 7004 output:     at next (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/index.js:280:10)
+App 7004 output:     at jsonParser (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/body-parser/lib/types/json.js:110:7)
+App 7004 output:     at Layer.handle [as handle_request] (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/router/layer.js:95:5)
+App 7202 output: Running at http://localhost:3000
+App 26201 output: Running at http://localhost:3000
+App 19540 output: Running at http://localhost:3000
+App 21663 output: /home/di68/nodeapps/oas2/app.js:290
+App 21663 output:         })}
+App 21663 output:          ^
+App 21663 output: SyntaxError: Unexpected token )
+App 21663 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 21663 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 21663 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 21663 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 21663 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 21663 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 21663 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 21663 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 21663 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 21663 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 12247 output: Running at http://localhost:3000
+App 22872 output: Running at http://localhost:3000
+App 29662 output: /home/di68/nodeapps/oas2/app.js:285
+App 29662 output:                 response.send({"message":result)})
+App 29662 output:                                                ^
+App 29662 output: SyntaxError: Unexpected token )
+App 29662 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 29662 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 29662 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 29662 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 29662 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 29662 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 29662 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 29662 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 29662 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 29662 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 31430 output: /home/di68/nodeapps/oas2/app.js:296
+App 31430 output:         )}
+App 31430 output:         ^
+App 31430 output: SyntaxError: Unexpected token )
+App 31430 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 31430 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 31430 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 31430 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 31430 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 31430 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 31430 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 31430 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 31430 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 31430 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 3322 output: /home/di68/nodeapps/oas2/app.js:296
+App 3322 output:         )}
+App 3322 output:         ^
+App 3322 output: SyntaxError: Unexpected token )
+App 3322 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 3322 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 3322 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 3322 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 3322 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 3322 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 3322 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 3322 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 3322 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 3322 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 26210 output: /home/di68/nodeapps/oas2/app.js:286
+App 26210 output:             })
+App 26210 output:              ^
+App 26210 output: SyntaxError: Unexpected token )
+App 26210 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 26210 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 26210 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 26210 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 26210 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 26210 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 26210 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 26210 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 26210 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 26210 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 18229 output: /home/di68/nodeapps/oas2/app.js:297
+App 18229 output:         )}
+App 18229 output:         ^
+App 18229 output: SyntaxError: Unexpected token )
+App 18229 output:     at Module._compile (internal/modules/cjs/loader.js:723:23)
+App 18229 output:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+App 18229 output:     at Module.load (internal/modules/cjs/loader.js:653:32)
+App 18229 output:     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+App 18229 output:     at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+App 18229 output:     at Module.require (internal/modules/cjs/loader.js:692:17)
+App 18229 output:     at Module.require (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 18229 output:     at require (internal/modules/cjs/helpers.js:25:18)
+App 18229 output:     at loadApplication (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:243:2)
+App 18229 output:     at setupEnvironment (/opt/cpanel/ea-ruby27/root/usr/share/passenger/helper-scripts/node-loader.js:214:2)
+App 13929 output: Running at http://localhost:3000
+App 13929 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 13929 output:       throw err; // Rethrow non-MySQL errors
+App 13929 output:       ^
+App 13929 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 13929 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 13929 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 13929 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:275:10)
+App 13929 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 13929 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:285:26)
+App 13929 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 13929 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 13929 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 13929 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 13929 output:     at Query.EofPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+App 9183 output: Running at http://localhost:3000
+App 26448 output: Running at http://localhost:3000
+App 26448 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 26448 output:       throw err; // Rethrow non-MySQL errors
+App 26448 output:       ^
+App 26448 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 26448 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 26448 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 26448 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:275:10)
+App 26448 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 26448 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:285:26)
+App 26448 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 26448 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 26448 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 26448 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 26448 output:     at Query.EofPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+App 13842 output: Running at http://localhost:3000
+App 24439 output: Running at http://localhost:3000
+App 24439 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 24439 output:       throw err; // Rethrow non-MySQL errors
+App 24439 output:       ^
+App 24439 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 24439 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 24439 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 24439 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:275:10)
+App 24439 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 24439 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:286:26)
+App 24439 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 24439 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 24439 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 24439 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 24439 output:     at Query.EofPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+App 12666 output: Running at http://localhost:3000
+App 12666 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 12666 output:       throw err; // Rethrow non-MySQL errors
+App 12666 output:       ^
+App 12666 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 12666 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 12666 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 12666 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:275:10)
+App 12666 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 12666 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:286:26)
+App 12666 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 12666 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 12666 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 12666 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 12666 output:     at Query.EofPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+App 1373 output: Running at http://localhost:3000
+App 26018 output: Running at http://localhost:3000
+App 17417 output: Running at http://localhost:3000
+App 23943 output: Running at http://localhost:3000
+App 1597 output: Running at http://localhost:3000
+App 1572 output: Running at http://localhost:3000
+App 6739 output: Running at http://localhost:3000
+App 12816 output: Running at http://localhost:3000
+App 3678 output: Running at http://localhost:3000
+App 24933 output: Running at http://localhost:3000
+App 24933 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 24933 output:       throw err; // Rethrow non-MySQL errors
+App 24933 output:       ^
+App 24933 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 24933 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 24933 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 24933 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:174:12)
+App 24933 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:278:15)
+App 24933 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 24933 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:297:18)
+App 24933 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 24933 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 24933 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 24933 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 8340 output: Running at http://localhost:3000
+App 8340 output: /home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/Parser.js:437
+App 8340 output:       throw err; // Rethrow non-MySQL errors
+App 8340 output:       ^
+App 8340 output: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+App 8340 output:     at ServerResponse.setHeader (_http_outgoing.js:470:11)
+App 8340 output:     at ServerResponse.header (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:794:10)
+App 8340 output:     at ServerResponse.json (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:275:10)
+App 8340 output:     at ServerResponse.send (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/express/lib/response.js:162:21)
+App 8340 output:     at Query.<anonymous> (/home/di68/nodeapps/oas2/app.js:297:18)
+App 8340 output:     at Query.<anonymous> (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:526:10)
+App 8340 output:     at Query._callback (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/Connection.js:488:16)
+App 8340 output:     at Query.Sequence.end (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+App 8340 output:     at Query._handleFinalResultPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:149:8)
+App 8340 output:     at Query.EofPacket (/home/di68/nodevenv/nodeapps/oas2/10/lib/node_modules/mysql/lib/protocol/sequences/Query.js:133:8)
+App 11225 output: Running at http://localhost:3000
+App 31566 output: Running at http://localhost:3000
+App 14979 output: Running at http://localhost:3000
+App 1658 output: Running at http://localhost:3000
+App 3705 output: Running at http://localhost:3000
+App 29576 output: Running at http://localhost:3000

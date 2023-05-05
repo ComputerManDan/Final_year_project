@@ -1,0 +1,112 @@
+#pp{
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 1em;
+    max-width: 15em;
+    BORDER: SOLID 1PX GRAY;
+}
+main {
+    border-left: 0.1em solid gray;
+    border-right: 0.1em solid gray;
+}
+#uploadForm{
+    border-bottom: 1px solid gray;
+}
+#UserTeam{
+     margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    text-align: center;
+    font-size: 2em;
+    font-family: sans-serif;
+}
+#name{
+    text-align: center;
+    font-size: 2em;
+    font-family: sans-serif; margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+#upload{
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#upload:hover {
+  background-color: grey;
+}
+input, select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#teamButton{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+#transfersButton{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+h2 {
+    background-color: #f3f3f3;
+    margin-bottom: 0px;
+        font-family: sans-serif;
+}
+
+.teamButton {
+border-radius: 1em;
+    margin: 0.2em;
+}
+#teamButtons{background-color: lightgray;}
+#profilePic{
+    max-width: 3em;
+}
+#filters{
+    background-color: lightgray;
+}
+#logout{padding: 12px 20px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: auto;
+    display: block;}
+    
+#submitButton{padding: 12px 20px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;}
+#Userposts{ margin-top: 0.25em;
+    margin-bottom: 0.25em;}
+    
+#queryForm{    padding-left: 1em;}
+#message{border-bottom: 1px solid gray;
+    text-align: center;
+    font-size: 2em;
+    font-family: sans-serif;
+     margin-top: 0.25em;
+    margin-bottom: 0.25em
+}
+
+#accMes{    text-align: center;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    font-weight: normal;
+}

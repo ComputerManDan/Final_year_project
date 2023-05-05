@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Post maker</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/profile.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	    </header>
+    	    <main>
+    	        <h3 id="name">Name: </h3>
+    	        <h3 id="team">Team: </h3>
+    	    </main>
+    	    <footer>
+    	    </footer>
+	    </div>
+    <script>
+            fetch('https://di68.brighton.domains/oas2/profileinfo')
+            .then((response) => response.json())
+            .then((data) => {
+                    console.log(data["message"])
+                    document.getElementById("name").innerHTML +=(data["message"][0]);
+            })
+            
+    </script>
+	</body>
+</html>

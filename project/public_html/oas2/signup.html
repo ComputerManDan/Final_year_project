@@ -1,0 +1,67 @@
+<html><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Sign up</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/signup.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	        <img src="https://di68.brighton.domains/oas2/images/logo.png" alt="logo" id="logo">
+        	    <nav id="nav">
+        	    </nav>
+        		<h1>Sign up Form</h1>
+    	    </header>
+    	    <main>
+        		<form action="signup" method="POST">
+        			<input type="text" name="username" placeholder="username" required="">
+        			<input type="text" name="email" placeholder="email" required="">
+        			<input type="password" name="password" placeholder="Password" required="">
+                    <select id="team" name="team">
+                      <option value="arsenal">Arsenal</option>
+                      <option value="villa">Aston Villa FC</option>
+                      <option value="bournemouth">Bournemouth AFC</option>
+                      <option value="brentford">Brentford</option>
+                      <option value="brighton">Brighton & Hove Albion</option>
+                      <option value="chelsea">Chelsea</option>
+                      <option value="crystal palace">Crystal Palace</option>
+                      <option value="everton">Everton FC</option>
+                      <option value="fulham">Fulham</option>
+                      <option value="leicester">Leicester City FC</option>
+                      <option value="leeds">Leeds United</option>
+                      <option value="liverpool">Liverpool FC</option>
+                      <option value="city">Manchester City FC</option>
+                      <option value="united">Manchester United FC</option>
+                      <option value="newcastle">Newcastle United</option>
+                      <option value="southampton">Southampton FC</option>
+                      <option value="spurs">Tottenham Hotspur FC</option>
+                      <option value="ham">West Ham United</option>
+                      <option value="wolves">Wolverhampton Wanderers</option>
+                    </select>
+                    
+        			<input type="submit">
+        		</form>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+	    </div>
+		<script>
+            fetch('https://di68.brighton.domains/oas2/info')
+            .then((response) => response.json())
+            .then((data) => {
+                if (data["message"]!="login"){
+                document.getElementById("nav").innerHTML = "<a href='index.html'>&#127968; Index</a> <a href='forum.html'>&#128214; Forum</a> <a href='postmaker.html'>&#128396; Postmaker</a> <a href='profile.html'>&#128100; Profile</a>";
+                console.log(data["message"]);}
+            else{
+                document.getElementById("nav").innerHTML = "<a href='login.html'>&#128275; Login</a> <a href='signup.html'>&#10133; Sign up</a>";
+            }})
+	</script>
+</body>
+</html>

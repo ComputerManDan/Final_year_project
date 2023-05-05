@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>forum</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/forum.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+        	    <nav>
+        	        <a href="index.html">Index</a>
+        	        <a href="forum.html">Forum</a>
+        	        <a href="postmaker.html">Postmaker</a>
+        	        <a href="profile.html">Profile</a>
+        	        <a href="login.html">Login</a>
+        	        <a href="signup.html">Sign up</a>
+        	    </nav>
+        	    <h1>Out&AboutScout forum</h1>
+    	    </header>
+    	    <main>
+    	        <div id="teamButtons">
+    	            <h2>Teams :</h2>
+        	        <button class="teamButton" type="button" onclick="team(event, 'arsenal')">Arsenal</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'villa')">Aston Villa FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'bournemouth')">Bournemouth AFC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'brentford')">Brentford</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'brighton')">Brighton & Hove Albion</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'chelsea')">Chelsea</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'palace')">Crystal Palace</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'everton')">Everton FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'fulham')">Fulham</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'leicester')">Leicester City FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'leeds')">Leeds United</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'liverpool')">Liverpool FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'city')">Manchester City FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'united')">Manchester United FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'newcastle')">Newcastle United</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'forest')">Nottingham Forest</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'southampton')">Southampton FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'spurs')">Tottenham Hotspur FC</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'ham')">West Ham United</button>
+                      <button class="teamButton" type="button" onclick="team(event, 'wolves')">Wolverhampton Wanderers</button>
+                </div>
+                <div id="filters">
+        	        <h2>Filters :</h2>
+	    	        <div id="teamButtons">
+            	        <button class="teamButton" type="button" onclick="team(event, 'arsenal')">Arsenal</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'villa')">Aston Villa FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'bournemouth')">Bournemouth AFC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'brentford')">Brentford</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'brighton')">Brighton & Hove Albion</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'chelsea')">Chelsea</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'palace')">Crystal Palace</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'everton')">Everton FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'fulham')">Fulham</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'leicester')">Leicester City FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'leeds')">Leeds United</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'liverpool')">Liverpool FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'city')">Manchester City FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'united')">Manchester United FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'newcastle')">Newcastle United</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'forest')">Nottingham Forest</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'southampton')">Southampton FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'spurs')">Tottenham Hotspur FC</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'ham')">West Ham United</button>
+                          <button class="teamButton" type="button" onclick="team(event, 'wolves')">Wolverhampton Wanderers</button>
+                    </div>
+            		<button id="teamButton">Team</button>
+            		<button id="transfersButton">Transfers</button>
+                </div>
+                <div id=posts>
+                    Select team to see posts
+                </div>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+    	    </div>
+	    <script>
+	    function team(event, teamPicked){
+	        event.preventDefault();
+            fetch('https://di68.brighton.domains/oas2/team?team='+teamPicked)
+            .then((response) => response.json())
+            .then((data) => {
+                document.getElementById("posts").innerHTML=""
+                for (let i = 0; i < 10; i++) {
+                    const postinfo = data["message"][i];
+                    
+                    console.log(data["message"][i]);
+                    
+                    const div = document.createElement("div");
+                    div.innerHTML += "<img id='profilePic' src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["pp"]}`+".png"+" />";
+                    div.innerHTML += "<h3>"+postinfo["username"]+", "+postinfo["bias"]+", "+postinfo["date"]+"</h3>"
+                    div.innerHTML += "<h4>"+postinfo["title"]+"</h4>"
+                    div.innerHTML += "<p>"+postinfo["post"]+"</p>"
+                    div.innerHTML += "<img src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["imageref"]}`+".png"+" />";
+                    div.innerHTML += "<p>Likes: "+postinfo["likes"]+"</p>"
+                    
+                    if (postinfo["cata"]=="Transfer"){
+                        div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; background-color:yellow");
+                    }
+                    else {div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em;");}
+                    div.setAttribute("id", "div"+String(i));
+
+
+                    document.getElementById("posts").appendChild(div);
+                    
+                }
+            })
+	    }
+            
+            function random(number){
+                return Math.floor(Math.random()*number);;
+            }
+            function CC (event){
+                event.preventDefault();
+                document.body.style.backgroundColor = 'rgb('+random(255)+','+random(255)+','+random(255)+')';
+            }
+	    </script>
+	</body>
+</html>

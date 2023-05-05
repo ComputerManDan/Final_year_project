@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Post maker</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/postmaker.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	        <img src="https://di68.brighton.domains/oas2/images/logo.png" alt="logo" id="logo">
+        	    <nav id="nav">
+        	    </nav>
+    	    </header>
+    	    <main id="main">
+        		<div id="Postmaker-form" class="Postmaker-form">
+                    <form action="create" method="POST" ref="uploadForm" id="uploadForm" enctype="multipart/form-data">
+        			    <input type="text" name="title" placeholder="title" required>
+        				<input type="text" name="post" placeholder="post" required>
+            			<select id="team" name="team">
+                          <option value="arsenal">Arsenal</option>
+                          <option value="villa">Aston Villa FC</option>
+                          <option value="bournemouth">Bournemouth AFC</option>
+                          <option value="brentford">Brentford</option>
+                          <option value="brighton">Brighton & Hove Albion</option>
+                          <option value="chelsea">Chelsea</option>
+                          <option value="palace">Crystal Palace</option>
+                          <option value="everton">Everton FC</option>
+                        <option value="forest">Forest</option>
+                          <option value="fulham">Fulham</option>
+                          <option value="leicester">Leicester City FC</option>
+                          <option value="leeds">Leeds United</option>
+                          <option value="liverpool">Liverpool FC</option>
+                          <option value="city">Manchester City FC</option>
+                          <option value="united">Manchester United FC</option>
+                          <option value="newcastle">Newcastle United</option>
+                          <option value="southampton">Southampton FC</option>
+                          <option value="spurs">Tottenham Hotspur FC</option>
+                          <option value="ham">West Ham United</option>
+                          <option value="wolves">Wolverhampton Wanderers</option>
+                        </select>
+            			<select id="cata" name="cata">
+                          <option value="Team">Team</option>
+                          <option value="Transfer">Transfer</option>
+                        </select>
+                        <label>Optional image attachment:</label>
+                        <input type="file" name="sampleFile" id="file">
+        				<input type="submit">
+        			</form>
+        			<!--<button onclick="print()">button</button>-->
+
+        		</div>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+	    </div>
+
+    <script>
+        function print(){
+            const onlyInputs = document.querySelectorAll('#file');
+
+            onlyInputs.forEach(input => {
+              console.log(input);
+            });
+        }
+            fetch('https://di68.brighton.domains/oas2/info')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data["message"])
+                if (data["message"]!="login"){
+                document.getElementById("uploadForm").setAttribute("display", "block");
+
+                document.getElementById("nav").innerHTML = "<a href='index.html'>&#127968; Index</a> <a href='forum.html'>&#128214; Forum</a> <a href='postmaker.html'>&#128396; Postmaker</a> <a href='profile.html'>&#128100; Profile</a>";
+                console.log(data["message"]);
+                fetch("https://di68.brighton.domains/oas2/getforum?team="+data["message"][0]["team"]+"&bias=any&cata=any&sort=datedown&time=any")
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("posts").innerHTML=""
+                    for (let i = 0; i < 10; i++) {
+                        const postinfo = data["message"][i];
+                        console.log(data["message"]);
+                        console.log(data["message"][i]);
+
+                    }
+            })}
+            else{
+                document.getElementById("nav").innerHTML = "<a href='login.html'>&#128275; Login</a> <a href='signup.html'>&#10133; Sign up</a>";
+                const div = document.createElement("div");
+                div.innerHTML += "<div id='login'> Login to view page</div>";
+                document.getElementById("main").appendChild(div);
+                document.getElementById("uploadForm").setAttribute("display", "none");
+            }
+            })
+        // fetch('https://di68.brighton.domains/oas2/info')
+        // .then((response) => response.json())
+        // .then((data) => {
+        //     console.log(data);
+            
+        // })
+    </script>
+	</body>
+	
+</html>

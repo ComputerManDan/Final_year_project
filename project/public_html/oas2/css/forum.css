@@ -1,0 +1,57 @@
+input, select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#teamButton{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+#transfersButton{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+h2 {
+    background-color: #f3f3f3;
+    margin-bottom: 0px;
+        font-family: sans-serif;
+}
+
+.teamButton {
+border-radius: 1em;
+    margin: 0.2em;
+}
+#teamButtons{background-color: lightgray;}
+#profilePic{
+    max-width: 3em;
+}
+#filters{
+    background-color: lightgray;
+}
+#queryForm{text-align: center;
+        padding-top: 1em;
+
+}
+
+
+#submitButton{padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;}

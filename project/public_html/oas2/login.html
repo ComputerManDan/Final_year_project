@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>login</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/signup.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	        <img src="https://di68.brighton.domains/oas2/images/logo.png" alt="logo" id="logo">
+        	    <nav id="nav">
+        	    </nav>
+        	            		<h1>Login Form</h1>
+
+    	    </header>
+    	    <main>
+    	        
+        		<div class="login-form">
+        			
+        			<form action="auth" method="POST">
+        				<input type="text" name="email" placeholder="email" required>
+        				<input type="password" name="password" placeholder="Password" required>
+        				<input type="submit">
+        			</form>
+        		</div>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+	    </div>
+	<script>
+            fetch('https://di68.brighton.domains/oas2/info')
+            .then((response) => response.json())
+            .then((data) => {
+                if (data["message"]!="login"){
+                document.getElementById("nav").innerHTML = "<a href='index.html'>&#127968; Index</a> <a href='forum.html'>&#128214; Forum</a> <a href='postmaker.html'>&#128396; Postmaker</a> <a href='profile.html'>&#128100; Profile</a>";
+                console.log(data["message"]);}
+            else{
+                document.getElementById("nav").innerHTML = "<a href='login.html'>&#128275; Login</a> <a href='signup.html'>&#10133; Sign up</a>";
+            }})
+	</script>
+	</body>
+</html>

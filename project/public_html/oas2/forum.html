@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>forum</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+        <link href="css/forum.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+	    <a id="top"></a>
+	    <div id="wrapper">
+    	    <header>
+    	        <img src="https://di68.brighton.domains/oas2/images/logo.png" alt="logo" id="logo">
+        	    <nav id="nav">
+        	    </nav>
+    	    </header>
+    	    <main id="main">
+        		<form id="queryForm">
+        		    <label for="team">Team: </label>
+                    <select id="team" name="team">
+                      <option value="arsenal">Arsenal</option>
+                      <option value="villa">Aston Villa FC</option>
+                      <option value="bournemouth">Bournemouth AFC</option>
+                      <option value="brentford">Brentford</option>
+                      <option value="brighton">Brighton & Hove Albion</option>
+                      <option value="chelsea">Chelsea</option>
+                      <option value="palace">Crystal Palace</option>
+                      <option value="everton">Everton FC</option>
+                      <option value="forest">Forest</option>
+                      <option value="fulham">Fulham</option>
+                      <option value="leicester">Leicester City FC</option>
+                      <option value="leeds">Leeds United</option>
+                      <option value="liverpool">Liverpool FC</option>
+                      <option value="city">Manchester City FC</option>
+                      <option value="united">Manchester United FC</option>
+                      <option value="newcastle">Newcastle United</option>
+                      <option value="southampton">Southampton FC</option>
+                      <option value="spurs">Tottenham Hotspur FC</option>
+                      <option value="ham">West Ham United</option>
+                      <option value="wolves">Wolverhampton Wanderers</option>
+                    </select>      
+                    <label for="bias">bias: </label>
+                    <select id="bias" name="bias">
+                        <option value="any">any</option>
+                      <option value="arsenal">Arsenal</option>
+                      <option value="villa">Aston Villa FC</option>
+                      <option value="bournemouth">Bournemouth AFC</option>
+                      <option value="brentford">Brentford</option>
+                      <option value="brighton">Brighton & Hove Albion</option>
+                      <option value="chelsea">Chelsea</option>
+                      <option value="palace">Crystal Palace</option>
+                      <option value="everton">Everton FC</option>
+                      <option value="forest">Forest</option>
+                      <option value="fulham">Fulham</option>
+                      <option value="leicester">Leicester City FC</option>
+                      <option value="leeds">Leeds United</option>
+                      <option value="liverpool">Liverpool FC</option>
+                      <option value="city">Manchester City FC</option>
+                      <option value="united">Manchester United FC</option>
+                      <option value="newcastle">Newcastle United</option>
+                      <option value="southampton">Southampton FC</option>
+                      <option value="spurs">Tottenham Hotspur FC</option>
+                      <option value="ham">West Ham United</option>
+                      <option value="wolves">Wolverhampton Wanderers</option>
+                    </select>
+                    <br>
+                    <label for="cata">cata: </label>
+                    <select id="cata" name="cata">
+                        <option value="any">any</option>
+                      <option value="team">team</option>
+                      <option value="transfers">transfers</option>
+                    </select>
+                    <label for="sort">sort: </label>
+                    <select id="sort" name="sort">
+                      <option value="likesup">likes up</option>
+                      <option value="likesdown">likes down</option>
+                      <option value="datesup">date up</option>
+                      <option value="datedown">date down</option>
+                    </select>
+                    <label for="time">time: </label>
+                    <select id="time" name="time">
+                        <option value="any">any</option>
+                      <option value="week">week</option>
+                      <option value="month">month</option>
+                      <option value="year">year</option>
+                    </select>
+                    <br>
+        		</form>
+        		                    <button id="submitButton" onclick="getQuery()">submit</button>
+
+                <div id=posts>
+                    Select team to see posts
+                </div>
+                <div id='login'></div>
+    	    </main>
+    	    <footer>
+    	        <small>
+                    © 2023, Daniel Ingram.
+                    <a href="di68@brighton.ac.uk">Email Daniel Ingram.</a>
+                    <a id="backToTop" href="#top">Go to top</a>
+                </small>
+    	    </footer>
+    	    </div>
+	    <script>
+	 	   // function team(event,){
+	   //     event.preventDefault();
+    //         fetch('https://di68.brighton.domains/oas2/getforum?team='team+'&bias='bias+'&cata='cata+'&sort='+sort'&time='+time)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             document.getElementById("posts").innerHTML=""
+    //             for (let i = 0; i < 10; i++) {
+    //                 const postinfo = data["message"][i];
+                    
+    //                 console.log(data["message"][i]);
+                    
+    //                 const div = document.createElement("div");
+    //                 div.innerHTML += "<img id='profilePic' src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["pp"]}`+".png"+" />";
+    //                 div.innerHTML += "<h3>"+postinfo["username"]+", "+postinfo["bias"]+", "+postinfo["date"]+"</h3>"
+    //                 div.innerHTML += "<h4>"+postinfo["title"]+"</h4>"
+    //                 div.innerHTML += "<p>"+postinfo["post"]+"</p>"
+    //                 div.innerHTML += "<img src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["imageref"]}`+".png"+" />";
+    //                 div.innerHTML += "<p>Likes: "+postinfo["likes"]+"</p>"
+                    
+    //                 if (postinfo["cata"]=="Transfer"){
+    //                     div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; background-color:yellow");
+    //                 }
+    //                 else {div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em;");}
+    //                 div.setAttribute("id", "div"+String(i));
+
+
+    //                 document.getElementById("posts").appendChild(div);
+                    
+    //             }
+    //         })
+	   // }
+
+            fetch('https://di68.brighton.domains/oas2/info')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data["message"])
+                console.log("message2: "+data["message2"])
+                if (data["message"]!="login"){
+                document.getElementById("nav").innerHTML = "<a href='index.html'>&#127968; Index</a> <a href='forum.html'>&#128214; Forum</a> <a href='postmaker.html'>&#128396; Postmaker</a> <a href='profile.html'>&#128100; Profile</a>";
+                console.log(data["message"]);}
+            else{
+                document.getElementById("nav").innerHTML = "<a href='login.html'>&#128275; Login</a> <a href='signup.html'>&#10133; Sign up</a>";
+                const div = document.createElement("div");
+                div.innerHTML += "<div id='login'> Login to view page</div>";
+                document.getElementById("main").appendChild(div);
+            }
+            })
+	   function getQuery(){
+    	    var bias = document.getElementById("bias").value;
+    	    var cata = document.getElementById("cata").value;
+    
+            console.log("VALS"+bias+" "+cata);
+        
+            const form = document.getElementById('queryForm');
+            const formData = new FormData(form);
+            let formDataArr=[]
+            for (const [key, value] of formData) {
+                // `${key}: ${value}
+              (formDataArr.push(value))
+            }
+            console.log(formDataArr);
+            fetch('https://di68.brighton.domains/oas2/getforum?team='+formDataArr[0]+'&bias='+formDataArr[1]+'&cata='+formDataArr[2]+'&sort='+formDataArr[3]+'&time='+formDataArr[4])
+            .then((response) => response.json())
+            .then((data) => {
+                document.getElementById("login").innerHTML=""
+                document.getElementById("posts").innerHTML=""
+                for (let i = 0; i < 10; i++) {
+                    const postinfo = data["message"][i];
+                    
+                    console.log(data["message"]);
+                    
+                    const div = document.createElement("div");
+                    div.innerHTML += "<img id='profilePic' src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["pp"]}`+".png"+" />";
+                    div.innerHTML += "<h3>"+postinfo["username"]+", "+postinfo["bias"]+", "+postinfo["date"]+"</h3>"
+                    div.innerHTML += "<h4 id=title_div"+String(i)+">"+postinfo["title"]+"</h4>"
+                    div.innerHTML += '<p id="opin_div'+String(i)+'">'+postinfo["post"]+'</p>'
+                    if (postinfo["imageref"] == 0){ console.log("emtpy")}
+                    else {                    div.innerHTML += "<img src="+'https://di68.brighton.domains/oas2/images/'+`${postinfo["imageref"]}`+".png"+" style='max-width: 50%; display: block; margin-left: auto; margin-right: auto; max-height: 50%;' />";}
+                    div.innerHTML += "<p>Likes: "+postinfo["likes"]+"</p>"
+                    div.innerHTML += '<button id="div'+String(i)+'" onclick="share(this.id)">share</button>'
+                    if (postinfo["cata"]=="Transfer"){
+                        div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; background-color:yellow; margin:0.1em;");
+                    }
+                    else {div.setAttribute("style", "border: solid 0.2em black; border-radius: 1em; padding: 1em; margin:0.1em; background-color:#f3f3f3;");}
+                    div.setAttribute("id", "div"+String(i));
+
+
+                    document.getElementById("posts").appendChild(div);
+                    
+                }
+            })
+	   }
+            
+            function random(number){
+                return Math.floor(Math.random()*number);;
+            }
+            function CC (event){
+                event.preventDefault();
+                document.body.style.backgroundColor = 'rgb('+random(255)+','+random(255)+','+random(255)+')';
+            }
+      function share(clicked_id) {
+        const data = {
+          title: document.getElementById("title_"+clicked_id).innerText,
+          text: document.getElementById("opin_"+clicked_id).innerText,
+        };
+        navigator.share(data);
+      }
+	    </script>
+	</body>
+</html>
